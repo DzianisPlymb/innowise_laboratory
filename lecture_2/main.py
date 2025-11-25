@@ -13,7 +13,7 @@ def main():
 
     user_profile = {}
 
-    user_name = input("Enter your dull name: ") or "Unknown"
+    user_name = input("""Enter your dull name: """) or "Unknown"
     user_profile["Name"] = user_name
 
     birth_year = int(input("Enter your birth day: ")) or 2000
