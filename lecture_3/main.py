@@ -44,26 +44,30 @@ def desplay(list):
 
     allAverages = []
 
+    print("---Student Report---")
     for student in list:
         name = student["name"]
         grades = student["grades"]
 
+
         try:
             average = sum(grades) / len(grades)
-            print(f"{name}'s average grade is {average:.2f}")
+            print(f"{name}'s average grade is {average:.1f}")
 
             allAverages.append(average)
         except ZeroDivisionError:
             print(f"{name}'s average grade is N/A.")
+    print("--------------------------")
+
 
     if allAverages:
         maxA = max(allAverages)
         minA = min(allAverages)
         overallA = sum(allAverages) / len(allAverages)
 
-        print(f"Max Average: {maxA:.2f}")
-        print(f"Min Average: {minA:.2f}")
-        print(f"Overall Average: {overallA:.2f}")
+        print(f"Max Average: {maxA:.1f}")
+        print(f"Min Average: {minA:.1f}")
+        print(f"Overall Average: {overallA:.1f}")
     else:
         print("No grades available")
 
@@ -85,10 +89,7 @@ def findTop(list):
 
     highestAvg = sum(topStudent["grades"]) / len(topStudent["grades"])
 
-    print(f"The student with the highest average is {topStudent['name']} with a grade if {highestAvg:.2f}.")
-
-
-
+    print(f"The student with the highest average is {topStudent['name']} with a grade of {highestAvg:.1f}.")
 
 def main():
     listOfStudent = []
@@ -118,8 +119,6 @@ def main():
                     break
         except ValueError:
             print("Invalid input. Please enter a number.")
-
-
 
 
 if __name__ == "__main__":
